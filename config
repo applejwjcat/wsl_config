@@ -1,0 +1,133 @@
+#	$OpenBSD: ssh_config,v 1.34 2019/02/04 02:39:42 dtucker Exp $
+
+# This is the ssh client system-wide configuration file.  See
+# ssh_config(5) for more information.  This file provides defaults for
+# users, and the values can be changed in per-user configuration files
+# or on the command line.
+
+# Configuration data is parsed as follows:
+#  1. command line options
+#  2. user-specific file
+#  3. system-wide file
+# Any configuration value is only changed the first time it is set.
+# Thus, host-specific definitions should be at the beginning of the
+# configuration file, and defaults at the end.
+
+# Site-wide defaults for some commonly used options.  For a comprehensive
+# list of available options, their meanings and defaults, please see the
+# ssh_config(5) man page.
+
+# Host *
+#   ForwardAgent no
+#   ForwardX11 no
+#   PasswordAuthentication yes
+#   HostbasedAuthentication no
+#   GSSAPIAuthentication no
+#   GSSAPIDelegateCredentials no
+#   BatchMode no
+#   CheckHostIP yes
+#   AddressFamily any
+#   ConnectTimeout 0
+#   StrictHostKeyChecking ask
+#   IdentityFile ~/.ssh/id_rsa
+#   IdentityFile ~/.ssh/id_dsa
+#   IdentityFile ~/.ssh/id_ecdsa
+#   IdentityFile ~/.ssh/id_ed25519
+#   Port 22
+#   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+#   MACs hmac-md5,hmac-sha1,umac-64@openssh.com
+#   EscapeChar ~
+#   Tunnel no
+#   TunnelDevice any:any
+#   PermitLocalCommand no
+#   VisualHostKey no
+#   ProxyCommand ssh -q -W %h:%p gateway.example.com
+#   RekeyLimit 1G 1h
+
+PubkeyAuthentication yes
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+ServerAliveInterval 60
+
+
+Host azure
+    HostName    20.205.41.59
+    User        tristan
+    Port        22
+    IdentityFile /home/tristan/.ssh/id_rsa
+
+Host yutu
+    HostName    172.16.209.154
+    User        tristan
+    Port        22
+    IdentityFile /home/tristan/.ssh/id_rsa
+
+Host yutu2
+    HostName    172.16.209.211
+    User        tristan
+    Port        2222
+    IdentityFile /home/tristan/.ssh/id_rsa
+
+Host tianhe4
+      HostName    172.16.22.11
+      User        sysu_lbpan_3
+      # User        sysu_spa_wszhu_4
+      Port        5566
+      IdentityFile /home/tristan/.ssh/sysu_lbpan_3.id
+      # IdentityFile /home/tristan/.ssh/sysu_spa_wszhu_4.id
+
+Host tianhe_zhu
+      HostName    172.16.22.11
+      User        sysu_spa_wszhu_4
+      Port        22
+      IdentityFile /home/tristan/.ssh/sysu_spa_wszhu_4.id
+
+Host chenjh
+    HostName    172.16.209.154
+    User        chenjh
+    Port        22
+    IdentityFile /home/tristan/.ssh/id_rsa
+
+Host kunlun
+    HostName    211.66.130.33
+    User        tristan
+    Port        22
+    IdentityFile /home/tristan/.ssh/id_rsa
+
+Host dingding
+    HostName www.dingdingluan.top
+    User tristan
+    Port 50121
+
+Host tianhe4
+      HostName    172.16.22.11
+      User        sysu_lbpan_3
+      Port        5566
+      IdentityFile /home/tristan/.ssh/sysu_spa_wszhu_4.id
+
+Host tianhe
+    HostName    2001:250:3079::6
+    User        sysu_lbpan_3
+    Port        35643
+    IdentityFile /home/tristan/.ssh/sysu_lbpan_3.id
+      
+Host tianhe1
+      HostName    172.16.22.11
+      User        sysu_lbpan_1
+      Port        5566
+      IdentityFile /home/tristan/.ssh/sysu_lbpan_1.id
+
+Host tianhe2
+      HostName    172.16.22.11
+      User        sysu_lbpan_2
+      Port        5566
+      IdentityFile /home/tristan/.ssh/sysu_lbpan_2.id
+
+Host tianhe62
+    HostName    2001:250:3079::6
+    User        sysu_lbpan_2
+    Port        35643
+    IdentityFile /home/tristan/.ssh/sysu_lbpan_2.id
+
+Host bridge
+    ProxyCommand ssh tianhe4 -W tn2-ib0
