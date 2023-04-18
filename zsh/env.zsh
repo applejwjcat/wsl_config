@@ -77,3 +77,5 @@ export INCLUDE_PATH=$HOME/.local/software/flash/fortran-1.10.6/include:$INCLUDE_
 #go env -w GO111MODULE=on
 #go env -w GOPROXY=https://proxy.golang.com.cn,direct
 # source $HOME/.config/zsh/.proxy.zsh
+
+export VI_MODE_SET_CURSOR=true
