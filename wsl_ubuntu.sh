@@ -8,6 +8,7 @@ tar -xvf node-v18.14.2-linux-x64.tar.xz -C ~/.local/software
 ln -s ~/.local/software/node-v18.14.2-linux-x64/bin/node ~/.local/bin/
 ln -s ~/.local/software/node-v18.14.2-linux-x64/bin/npm ~/.local/bin/
 ln -s $(which fdfind) ~/.local/bin/fd
+ln -s $(which batcat) ~/.local/bin/bat
 ~/.local/bin/npm install --user neovim
 pip install neovim --user --upgrade
 pip install shell-gpt --user --upgrade
