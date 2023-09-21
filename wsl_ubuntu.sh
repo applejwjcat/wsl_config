@@ -1,5 +1,6 @@
 sudo apt install neovim python3-pip ripgrep ranger universal-ctags bat fd-find xclip yarn
 cd /usr/bin && sudo ln -s python3.10 python
+cd ~/Downloads
 wget https://nodejs.org/dist/v18.14.2/node-v18.14.2-linux-x64.tar.xz
 mkdir -p ~/.local/software
 mkdir -p ~/.local/bin
